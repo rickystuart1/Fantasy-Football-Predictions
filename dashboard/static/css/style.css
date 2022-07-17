@@ -30,7 +30,7 @@
 
 #navbar__logo {
     background-color: #bbbbc9;
-    background-image: linear-gradient(to top,  #35ff4d 0%, #bbbbc9 75%);
+    background-image: linear-gradient(to top,  #02470a 0%, #bbbbc9 75%);
     background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -97,7 +97,7 @@
 }
 
 .navbar__links:hover {
-    color: #35ff4d;
+    color: #206328;
     transition: all 0.3s ease;
 }
 
@@ -195,4 +195,56 @@
     #mobile-menu.is-active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
+}
+
+/* Info Section CSS */
+
+.main { 
+    background-color: #141414;
+}
+
+.main__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-self: center;
+    margin: o auto;
+    height: 90vh;
+    background-color: #141414;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0 50px;
+}
+
+.main__content h1 {
+    font-size: 4rem;
+    background-color: #3f5865; 
+    background-image: linear-gradient(to top, #ffffff 0%,  #3f5865 50%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+.main__content h2 {
+    font-size: 4rem;
+    background-color: #3f5865; 
+    background-image: linear-gradient(to top, #ffffff 0%,  #3f5865 70%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+.main__content p {
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.main__btn {
+    font-size: 1rem;
 }
