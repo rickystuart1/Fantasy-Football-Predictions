@@ -30,7 +30,7 @@
 
 #navbar__logo {
     background-color: #bbbbc9;
-    background-image: linear-gradient(to top,  #02470a 0%, #bbbbc9 75%);
+    /* background-image: linear-gradient(to top,  #02470a 0%, #bbbbc9 75%); */
     background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -97,7 +97,7 @@
 }
 
 .navbar__links:hover {
-    color: #206328;
+    color: #3f5865;
     transition: all 0.3s ease;
 }
 
@@ -220,7 +220,7 @@
 .main__content h1 {
     font-size: 4rem;
     background-color: #3f5865; 
-    background-image: linear-gradient(to top, #ffffff 0%,  #3f5865 50%);
+    /* background-image: linear-gradient(to top, #ffffff 0%,  #3f5865 50%); */
     background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -231,7 +231,7 @@
 .main__content h2 {
     font-size: 4rem;
     background-color: #3f5865; 
-    background-image: linear-gradient(to top, #ffffff 0%,  #3f5865 70%);
+    /* background-image: linear-gradient(to top, #ffffff 0%,  #3f5865 70%); */
     background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -248,7 +248,8 @@
 
 .main__btn {
     font-size: 1rem;
-    background-image: linear-gradient(to top, #fff 0%, #3f5865 75%);
+    background-color: rgb(80, 73, 73);
+    /* background-image: linear-gradient(to top, #fff 0%, #3f5865 75%); */
     padding: 14px 32px;
     border: none;
     border-radius: 4px;
