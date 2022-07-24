@@ -1,0 +1,359 @@
+Teams
+ID
+Name
+Abbreviation
+Conference
+Division
+
+QB_Stats
+index
+Rank
+PlayerID
+PlayerShortName
+PlayerAgeExact
+PassAttemptsPerGame
+PassingYards
+CompletionPercentage
+PassingTouchdowns
+Interceptions
+MoneyThrows
+TouchdownRate
+ProtectionRate
+PressuredCompletionPercentage
+AirYards
+AirYardsPerGame
+AirYardsPerAttempt
+DeepBallAttempts
+DeepBallCompletionPercentage
+Year
+Position
+
+WR_Stats
+index
+Rank
+PlayerID
+PlayerShortName
+Targets
+Reception
+ReceivingYards
+ReceivingTDs
+HogRate
+SnapShare
+AverageTargetDistance
+AirYards
+AirYardsPerGame
+AirYardsPerReception
+Targets.1
+RedZone Targets
+EndZone Targets
+TargetAccuracy
+TargetShare
+FantacyPointsPerTarget
+Year
+Position
+
+TE_Stats
+index
+Rank
+PlayerID
+PlayerShortName
+Targets
+Reception
+ReceivingYards
+ReceivingTDs
+HogRate
+SnapShare
+AverageTargetDistance
+AirYards
+AirYardsPerGame
+AirYardsPerReception
+Targets.1
+RedZone Targets
+EndZone Targets
+TargetAccuracy
+TargetShare
+FantacyPointsPerTarget
+Year
+Position
+
+RB_Stats
+index
+Rank
+PlayerID
+PlayerShortName
+PlayerAgeExact
+Carries
+RushingYArds
+YardsPerCarry
+RushingTouchdowns
+Targets
+Receptions
+ReceivingYards
+ReceivingTDs
+SnapShare
+OpportunityShare
+ShotgunCarryRate
+ShotgunYardsPerCarry
+UnderCenterCarryRate
+UnderCenterYardsPerCarry
+AverageDefendersInTheBox
+StackedFrontCarryRate
+BaseFrontCarryRate
+LightFrontCarryRate
+Year
+Position
+
+# Modify this code to update the DB schema diagram.
+# To reset the sample schema, replace everything with
+# two dots ('..' - without quotes).
+
+RB_Full_Stats
+-
+Index int PK
+PlayerID int
+Name varchar
+PlayerShortName varchar
+PlayerAgeExact float
+Rank int
+Team varchar
+Position varchar
+Played int
+Year int
+RushingAttempts int
+RushingYards int
+RushingYardsPerAttempt float
+RushingTouchdowns int
+Targets int
+Receptions int
+ReceivingYards int
+ReceivingTouchdowns int
+Fumbles int
+FumblesLost int
+SnapShare float
+FantasyPointsPerGame float
+FantasyPoints int
+
+
+QB_Full_Stats
+-
+Index int PK
+PlayerID int
+Name varchar
+PlayerShortName varchar
+PlayerAgeExact float
+Rank int
+Team varchar
+Position varchar
+Played int
+Year int
+PassingCompletions int
+PassingAttempts int
+PassingCompletionPercentage float
+PassingYards int
+PassingYardsPerAttempt float
+PassingTouchdowns int
+PassingInterceptions int
+PassingRating float
+PassAttemptsPerGame float
+CompletionPercentage float
+PressuredCompletionPercentage float
+AirYards int
+AirYardsPerGame float
+AirYardsPerAttempt float
+DeepBallAttempts int
+DeepBallCompletionPercentage float
+MoneyThrows int
+RushingAttempts int
+RushingYards int
+RushingYardsPerAttempt float
+RushingTouchdowns int
+TouchdownRate float
+ProtectionRate float
+FantasyPointsPerGame float
+FantasyPoints int
+
+TE_Full_Stats
+-
+Index int PK
+PlayerID int
+Name varchar
+PlayerShortName varchar
+Rank int
+Team varchar
+Position varchar
+Played int
+Year int
+ReceivingTargets int
+Receptions int
+ReceptionPercentage float
+ReceivingYards int
+ReceivingTouchdowns int
+ReceivingLong int
+ReceivingYardsPerTarget float
+ReceivingYardsPerReception float
+AverageTargetDistance float
+AirYards int
+AirYardsPerGame float
+AirYardsPerReception float
+RedZoneTargets int
+EndzoneTargets int
+TargetAccuracy float
+TargetShare float
+RushingAttempts int
+RushingYards int
+RushingYardsPerAttempt float
+RushingTouchdowns int
+Fumbles int
+FumblesLost int
+SnapShare float
+FantasyPointsPerTarget float
+FantasyPointsPerGame float
+FantasyPoints int
+
+WR_Full_Stats
+-
+PlayerID int PK 
+Name varchar
+PlayerShortName varchar
+Rank int
+Team varchar
+Position varchar
+Played int
+Year int
+ReceivingTargets int
+Receptions int
+ReceptionPercentage float
+ReceivingYards int
+ReceivingLong int
+ReceivingYardsPerTarget float
+ReceivingYardsPerReception float
+AverageTargetDistance float
+AirYards int
+AirYardsPerGame float
+AirYardsPerReception float
+RedZoneTargets int
+EndzoneTargets int
+TargetAccuracy float
+TargetShare float
+RushingAttempts int
+RushingYards int
+RushingYardsPerAttempt float
+RushingTouchdowns int
+Fumbles int
+FumblesLost int
+SnapShare float
+FantasyPointsPerTarget float
+FantasyPointsPerGame float
+FantasyPoints int
+
+Teams
+-
+ID
+Name varchar PK
+Abbreviation varchar
+Conference varchar
+Division varchar
+
+PlayerBios
+-
+Player_ID PK
+Name varchar 
+rel_link varchar
+Position varchar
+height varchar
+weight_(lbs) float
+dob_age varchar
+experience varchar
+college varchar
+weight_lbs varchar
+dob varchar
+exp(y) varchar
+draft_year int
+draft_round int
+draft_pick int
+draft_team varchar
+
+weekly_2018
+-
+Rank int
+Name varchar PK 
+Team varchar
+Position varchar
+WeeklyRank int
+Week int
+Opponent varchar
+PassingYards int
+PassingTouchdowns int
+PassingInterceptions int
+RushingYards int
+RushingTouchdowns int
+Receptions int
+ReceivingYards int
+ReceivingTouchdowns int
+FumblesLost int
+FantasyPointsPerGame float
+FantasyPoints int
+
+weekly_2019
+-
+Rank int
+Name varchar PK 
+Team varchar
+Position varchar
+WeeklyRank int
+Week int
+Opponent varchar
+PassingYards int
+PassingTouchdowns int
+PassingInterceptions int
+RushingYards int
+RushingTouchdowns int
+Receptions int
+ReceivingYards int
+ReceivingTouchdowns int
+FumblesLost int
+FantasyPointsPerGame float
+FantasyPoints int
+ 
+weekly_2020
+-
+Rank int
+PlayerID int
+Name varchar PK 
+Team varchar
+Position varchar
+WeeklyRank int
+Week int
+Opponent varchar
+PassingYards int
+PassingTouchdowns int
+PassingInterceptions int
+RushingYards int
+RushingTouchdowns int
+Receptions int
+ReceivingYards int
+ReceivingTouchdowns int
+FumblesLost int
+FantasyPointsPerGame float
+FantasyPoints int
+
+weekly_2021
+-
+Rank int
+Name varchar PK 
+Team varchar
+Position varchar
+WeeklyRank int
+Week int
+Opponent varchar
+PassingYards int
+PassingTouchdowns int
+PassingInterceptions int
+RushingYards int
+RushingTouchdowns int
+Receptions int
+ReceivingYards int
+ReceivingTouchdowns int
+FumblesLost int
+FantasyPointsPerGame float
+FantasyPoints int
