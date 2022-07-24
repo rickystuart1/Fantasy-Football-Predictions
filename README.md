@@ -63,7 +63,7 @@ Since the weekly and annual player data relied on team abbreviations, this table
 
 As previously stated the end goal of the model is to predict which players will perform well next year. The model created takes in statistics from one full year and predicts the fantasy points end total for the year requested. 
 
-####Description of preliminary data preprocessing/Description of how data was split into training and testing sets
+#### Description of preliminary data preprocessing/Description of how data was split into training and testing sets
 
 The program currently requests input that affect the target data such as how many points a quarterback receives for a passing touchdown, and does the league provide a point per reception. Then a training year is selected and a year to predict is selected (both via user input).
 Once the training year is selected the data set is prepared by querying the data for the selected training year. The data is also queried for the following year and the fantasy point total for the following year is calculated based on that year's statistics.
