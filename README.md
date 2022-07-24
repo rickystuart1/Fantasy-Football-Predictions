@@ -1,6 +1,6 @@
 # Fantasy Football Predictions
 ## Selected Topic 
-Predicting player fantasy football output in the upcoming 2022 season.  
+Predicting player fantasy football output in the upcoming 2022 season.
 
 ## Reasons 
 Fantasy Football is a game that allows a person to be the owner, manager and coach of their very own professional football team. You can compete against your friends, by drafting a team made up of NFL players and score points based on their weekly on field performance. At the start of each week you are placed in a head to head match up with another person in your league and the team's points are added up, and whichever team with the most points that week wins. We want to create a supervised machine learning model that predicts the potential output of players in the upcoming year using previous seasons statistics, allowing people who use our results to have an upper hand and help them make an informed decision when selecting their team during their draft this fall. 
@@ -14,6 +14,22 @@ We have set up a group on Slack and iMessage to communicate any issues or ideas 
 - How many breakout games could they have? Against which teams?
 - Do they have a history of underperforming early in the season? Later on? Inconsistent?
 - Can we estimate their week to week production? 
+
+## Dashboard
+### Storyboard
+[Presentation](https://docs.google.com/presentation/d/1g4S6FTzFQ1K1Ju-CnPEBZbU-fY2Y4ZVle-vF5rL6RwQ/edit#slide=id.p)
+
+### Tools
+- HTML5
+- CSS
+- JavaScript
+- Bootstrap
+- Google Font API
+- Font Awesome
+- PyScript
+
+### Interactive Elements
+Interactive elements will include a webpage with multiple pages, mobile responsiveness & interactive header, body and footer. There will be a table with statistics of the top 10 players of each offensive position on the Top Ten hmtl page. On the All Players html page, there will be a table with the top 200 players and a drop down with different fantasy scoring systems that can be selected. 
 
 ## Data Collection 
 ### Overview
