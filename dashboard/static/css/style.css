@@ -714,3 +714,130 @@
         margin: 2.5rem 0
     }
 }
+
+/* All Players CSS  */
+.players {
+    background-color: 	#919fa0;
+}
+
+.players__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-self: center;
+    margin: 0 auto;
+    height: auto;
+    /* edit height based on how many words you add on screen */
+    background-color: #919fa0;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0 50px;
+}
+
+.players__content h1 {
+    font-size: 2.75rem;
+    background-color: #25343b; 
+    /* background-image: linear-gradient(to top, #ffffff 0%,  #3f5865 50%); */
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+.players__content p {
+    margin-top: 1rem;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #fff
+}
+/* should i make img table for stats */
+.players__img--container {
+    text-align: center;
+}
+
+#players__img {
+    height: 80%;
+    width: 80%
+}
+
+.table {
+    height: 80%
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+    .players__container {
+        display: grid;
+        grid-template-columns: auto;
+        align-items: center;
+        justify-self: center;
+        width: 100%;
+        margin: 0 auto;
+        height: 90vh;
+    }
+
+    .players__content {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .players__content h1 {
+        font-size: 2.5rem;
+        margin-top: 2rem;
+    }
+
+    .players__content h2 {
+        font-size: 3rem;
+    }
+
+    .players__content p {
+        margin-top: 1rem;
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .players__content h1 {
+        font-size: 2rem;
+        margin-top: 3rem;
+    }
+
+    .players__content h2 {
+        font-size: 2rem;
+    }
+
+    .players__content p {
+        margin-top: 2rem;
+        font-size: 1.5rem;
+    }
+
+    .players_btn {
+        padding: 12px 36px;
+        margin: 2.5rem 0
+    }
+}
+
+/* Table Bootstrap CSS */
+.row {
+    color: #000000;
+    background-color: #919fa0;
+    padding: 75px;
+    text-align: center;
+
+}
+
+.my-custom-scrollbar {
+    position: relative;
+    height: 700px;
+    overflow: auto;
+}
+
+.table-wrapper-scroll-y {
+    display: block;
+}
+
+.form p {
+    color: #fff
+}
