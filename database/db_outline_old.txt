@@ -1,0 +1,189 @@
+QB_Stats
+index int
+Rank int
+PlayerID int
+PlayerShortName varchar
+PlayerAgeExact varchar
+PassAttemptsPerGame varchar
+PassingYards varchar
+CompletionPercentage float
+PassingTouchdowns
+Interceptions int
+MoneyThrows int
+TouchdownRate 
+ProtectionRate
+PressuredCompletionPercentage
+AirYards int
+AirYardsPerGame
+AirYardsPerAttempt
+DeepBallAttempts
+DeepBallCompletionPercentage
+Year int
+Position varchar 
+
+WR_Stats
+index
+Rank
+PlayerID
+PlayerShortName varchar 
+Targets
+Reception
+ReceivingYards
+ReceivingTDs
+HogRate
+SnapShare
+AverageTargetDistance
+AirYards
+AirYardsPerGame
+AirYardsPerReception
+Targets.1
+RedZone Targets
+EndZone Targets
+TargetAccuracy
+TargetShare
+FantacyPointsPerTarget
+Year
+Position
+
+TE_Stats
+index
+Rank
+PlayerID
+PlayerShortName
+Targets
+Reception
+ReceivingYards
+ReceivingTDs
+HogRate
+SnapShare
+AverageTargetDistance
+AirYards
+AirYardsPerGame
+AirYardsPerReception
+Targets.1
+RedZone Targets
+EndZone Targets
+TargetAccuracy
+TargetShare
+FantacyPointsPerTarget
+Year
+Position
+
+RB_Stats
+index
+Rank
+PlayerID
+PlayerShortName
+PlayerAgeExact
+Carries
+RushingYArds
+YardsPerCarry
+RushingTouchdowns
+Targets
+Receptions
+ReceivingYards
+ReceivingTDs
+SnapShare
+OpportunityShare
+ShotgunCarryRate
+ShotgunYardsPerCarry
+UnderCenterCarryRate
+UnderCenterYardsPerCarry
+AverageDefendersInTheBox
+StackedFrontCarryRate
+BaseFrontCarryRate
+LightFrontCarryRate
+Year
+Position
+
+Teams
+ID int
+Name varchar
+Abbreviation varchar PK
+Conference varchar
+Division varchar
+
+weekly_2018
+-
+Rank int
+Name varchar PK 
+Team varchar
+Position varchar
+WeeklyRank int
+Week int
+Opponent varchar
+PassingYards int
+PassingTouchdowns int
+PassingInterceptions int
+RushingYards int
+RushingTouchdowns int
+Receptions int
+ReceivingYards int
+ReceivingTouchdowns int
+FumblesLost int
+FantasyPointsPerGame float
+FantasyPoints int
+
+weekly_2019
+-
+Rank int
+Name varchar PK 
+Team varchar
+Position varchar
+WeeklyRank int
+Week int
+Opponent varchar
+PassingYards int
+PassingTouchdowns int
+PassingInterceptions int
+RushingYards int
+RushingTouchdowns int
+Receptions int
+ReceivingYards int
+ReceivingTouchdowns int
+FumblesLost int
+FantasyPointsPerGame float
+FantasyPoints int
+ 
+weekly_2020
+-
+Rank int
+PlayerID int
+Name varchar PK 
+Team varchar
+Position varchar
+WeeklyRank int
+Week int
+Opponent varchar
+PassingYards int
+PassingTouchdowns int
+PassingInterceptions int
+RushingYards int
+RushingTouchdowns int
+Receptions int
+ReceivingYards int
+ReceivingTouchdowns int
+FumblesLost int
+FantasyPointsPerGame float
+FantasyPoints int
+
+weekly_2021
+-
+Rank int
+Name varchar PK 
+Team varchar
+Position varchar
+WeeklyRank int
+Week int
+Opponent varchar
+PassingYards int
+PassingTouchdowns int
+PassingInterceptions int
+RushingYards int
+RushingTouchdowns int
+Receptions int
+ReceivingYards int
+ReceivingTouchdowns int
+FumblesLost int
+FantasyPointsPerGame float
+FantasyPoints int
