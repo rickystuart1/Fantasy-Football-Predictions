@@ -626,7 +626,7 @@
     align-items: center;
     justify-self: center;
     margin: 0 auto;
-    height: 75vh;
+    height: 45vh;
     /* edit height based on how many words you add on screen */
     background-color: #919fa0;
     z-index: 1;
@@ -726,7 +726,7 @@
     align-items: center;
     justify-self: center;
     margin: 0 auto;
-    height: auto;
+    height: 40vh;
     /* edit height based on how many words you add on screen */
     background-color: #919fa0;
     z-index: 1;
@@ -775,7 +775,7 @@
         justify-self: center;
         width: 100%;
         margin: 0 auto;
-        height: 90vh;
+        height: 75vh;
     }
 
     .players__content {
@@ -847,3 +847,29 @@
     top: 0;
     width: 100%;
     }
+
+
+#filtertext {
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.filter-btn {
+    font-size: 1rem;
+    background-color: rgb(80, 73, 73);
+    padding: 7px 1px;
+    border: solid;
+    border-color: #000000;
+    border-radius: 3px;
+    color: #fff;
+    margin-top: .25rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.35s;
+    outline: none;
+}
+
+.filter-btn:active {
+    background-color: #25343b;
+    border-color: #fff;
+}

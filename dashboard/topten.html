@@ -11,6 +11,12 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+        <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous"/>
+
     </head>
     <body>
         <nav class="navbar">
@@ -30,9 +36,6 @@
                     </li>
                     <li class="navbar__item">
                         <a href="../dashboard/players.html" class="navbar__links"> All Players </a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="/players1.html" class="navbar__links"> JDSKDJS </a>
                     </li>
                     <li class="navbar__btn">
                         <a href="#footer" class="button"> Contact Us </a>
@@ -56,6 +59,41 @@
             </div>
         </div>
 
+        <div class="container-fluid ">
+            <div class="row justify-content-center text-center">
+                <div class="col-md-1">
+                    <form class="bg-dark mt-2 rounded">
+                        <p id="filtertext"> Filter by position below! </p>
+                        <ul class="list-group bg-dark">
+                            <button class="filter-btn" id="qb">QB</button>
+                            <button class="filter-btn" id="rb">RB</button>
+                            <button class="filter-btn" id="te">TE</button>
+                            <button class="filter-btn" id="wr">WR</button>
+                            <button class="filter-btn" id="all">All</button>                           
+                        </ul>
+                    </form>
+                </div>
+                <div class="col-md-10 ">
+                    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                        <table class="table table-striped table-responsive align-middle shadow rounded mb-0" id="table-filter">
+                            <thead class="table-dark stickyHeader">
+                                <tr>
+                                    <th>2021 Fantasy Rank</th>
+                                    <th>Player ID</th>
+                                    <th>Name</th>
+                                    <th>Position</th>
+                                    <th>2021 Points</th>
+                                    <th>Projected 2022 Points</th>
+                                    <th>Projected 2022 Rank</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-light" id="topten"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Footer Section -->
         <div class="footer__container" id="footer">
             <div class="footer__links">
@@ -67,25 +105,25 @@
                     </div>
                     <div class="footer__link--items">
                         <h2>Adam Miller</h2>
-                        <a href="https://github.com/admiller125">GitHub</a>
-                        <a href="https://www.linkedin.com/in/adam-miller-pe-8ba78712a/">LinkedIn</a>
+                        <a href="https://github.com/admiller125" target="_blank">GitHub</a>
+                        <a href="https://www.linkedin.com/in/adam-miller-pe-8ba78712a/" target="_blank">LinkedIn</a>
                     </div>
                     <div class="footer__link--items">
                         <h2>Cam Shoffner</h2>
-                        <a href="https://github.com/camshoffner">GitHub</a>
-                        <a href="https://www.linkedin.com/in/camshoffner/">LinkedIn</a>
+                        <a href="https://github.com/camshoffner" target="_blank">GitHub</a>
+                        <a href="https://www.linkedin.com/in/camshoffner/" target="_blank">LinkedIn</a>
                     </div>
                 </div>    
                 <div class="footer__links--wrapper">
                     <div class="footer__link--items">
                         <h2>Charles Carpenter</h2>
-                        <a href="https://github.com/aKnownSaltMine">GitHub</a>
-                        <a href="https://www.linkedin.com/in/charles-carpenter-63038163/">LinkedIn</a>
+                        <a href="https://github.com/aKnownSaltMine" target="_blank">GitHub</a>
+                        <a href="https://www.linkedin.com/in/charles-carpenter-63038163/" target="_blank">LinkedIn</a>
                     </div>
                     <div class="footer__link--items">
                         <h2>Ricky Stuart</h2>          
-                        <a href="https://github.com/rickystuart1">GitHub</a>
-                        <a href="https://www.linkedin.com/in/ricardostuart/">LinkedIn</a>
+                        <a href="https://github.com/rickystuart1" target="_blank">GitHub</a>
+                        <a href="https://www.linkedin.com/in/ricardostuart/" target="_blank">LinkedIn</a>
                     </div>
                 </div>    
             </div>
@@ -115,6 +153,9 @@
                 </div>
             </div>
         </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
         <script src="static/js/app.js"></script>
+        <script src="static/js/data.js"></script>
+        <script src="static/js/ten.js"></script>
     </body>
 </html>
