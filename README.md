@@ -10,10 +10,9 @@ We have set up a group on Slack and iMessage to communicate any issues or ideas 
 
 ## Questions to be Answered 
 - How many total points will a player have in the 2022 football season?  
-- Can we determine what the top five picks are for each offensive positions, to help people make draft decisions?
-- How many breakout games could they have? Against which teams?
-- Do they have a history of underperforming early in the season? Later on? Inconsistent?
-- Can we estimate their week to week production? 
+- Can we determine what the top 10 picks are for each offensive positions, to help people make draft decisions?
+- Can we create a top 200 including all positions?
+- Is there validity to drafting players that performed better towards the end of the previous season?
 
 ## Dashboard
 ### Storyboard
@@ -78,28 +77,56 @@ As previously stated the end goal of the model is to predict which players will 
 
 #### Description of preliminary data preprocessing/Description of how data was split into training and testing sets
 
-The program currently requests input that affect the target data such as how many points a quarterback receives for a passing touchdown, and does the league provide a point per reception. Then a training year is selected and a year to predict is selected (both via user input).
-Once the training year is selected the data set is prepared by querying the data for the selected training year. The data is also queried for the following year and the fantasy point total for the following year is calculated based on that year's statistics.
+The program currently requests input that affect the target data such as how many points a quarterback receives for a passing touchdown, and does the league provide a point per reception. Then a predicted year is selected via user input.
+
+The following is the questions the program prompts in order to generate the datasets as requested:
+
+![](Resources/input_questions.PNG)
+
+The training data set is all of the previous years compared to the results of the following year (see updates since last model submission section below for more detail). The data is also queried for the following year and the fantasy point total for the following year is calculated based on that year's statistics.
 The final fantasy results from the following year is merged with the dataframe for the selected training year. This is then appended to a list of dataframes. The process is repeated for each position.
 
 After this process is completed the data for the prediction year feature data is aggregated and in a list of dataframes. Additional data is prepared in this function to provide an easy visual regarding how well the model performed on the year selected.
- 
+
 #### Description of preliminary feature engineering and preliminary feature selection, including decision-making process 
 
-Initially all statistics we received was used as a feature in our feature selection. This led to overfitting and caused the model to provide poor results. After looking at the weights of each feature in the model we noticed that there were a few features that seemed to overpower the other features in the model.
+Initially all statistics we received were used as a feature in our feature selection. This led to overfitting and caused the model to provide poor results. After looking at the weights of each feature in the model we noticed that there were a few features that seemed to overpower the other features in the model.
 In addition, we looked at the histograms of the feature distribution and saw that certain features were inconsistent between years and varied dramatically. We removed these features and then attempted to pare down the features to roughly the top 10 that we believed to affect the model using the coefficients as our guide.
-The goal was to try remove features that seemed to be too influential, or too irrelevant and logically wouldn’t have much effect on the next years data.
+The goal was to try remove features that seemed to be too influential, or too irrelevant and logically wouldn’t have much effect on the next years data. 
+
+The following is the an example of the model information that was used to make the determinations discussed above:
+
+![](Resources/QB_linreg_model.PNG)
 
 #### Description of how data was split into training and testing sets
 
-As mentioned earlier the user provides input and chooses the year they would like to train the model on. This process grabs the data of that year and merges it with the target which is derived by calculating the fantasy points for the next season based on the following years statistics.
+As mentioned earlier the user provides the prediction year and the model is trained on all data we have at our disposal up until that year. This process grabs the data of that year and merges it with the target which is derived by calculating the fantasy points for the next season based on the following years statistics.
 The features are split from the target and a multiple linear regression model is trained on the requested data set. The testing set is also input by the user based on the input question "which year would you like to predict?".  
+
+##### Updates since last model submission
+
+In the last iteration there was a selection that asked "which year would you like to train the data on?" This option has been removed and now the model only asks the question "which year would you like to predict?". The data is then prepared by making every year up until the predicted year as part of the training set.
+If for instance the prediction year was 2021 the training set would consist of the following: 2018 data merged with 2019 results and 2019 data merged with 2020 results. The test set is then the 2020 data merged with the 2021 results. 
+
+An example of what the output of the model looks like for a particular position is the following:
+
+![](Resources/QB_fantasy_pointandrank_projection.PNG)
+
+This visual serves as a far better determination of how successful the model is than an accuracy score. In fantasy football the determination of how close the fantasy point projection is away from the actual, isn't nearly as important as determining who should be selected.
+
+This means that the predicted rank is more important than the difference of the projection from the actual. Above you can see last year's rank in the second column, the sorted fantasy point projection in the 2021_proj column, and the 2021 actual rank. If the model was perfect the sorting of the 2021_proj would cause the 2021 Actual Rank column to start at 1 and be ordered sequentially.  
+
+In addition to this structural modification to the model we also took the weekly data for each player and generated a linear regression model comparing the week number to the fantasy points. Then from this model the slope was taken to determine whether the player was trending up or down through the course of the season.
+
+A value was also assigned for consistency rating which compared the fantasy point standard deviation to the mean performance.
+
+The other modification to the model was the addition of depth chart information. This helps de-rank players that likely wont get as much playing time the following year.    
 
 #### Explanation of model choice, including limitations and benefits
 
-A multiple linear regression model was selected because a given year does not provide many data points. For instance, a given year would only have roughly 32 starting quarterbacks to train a model. This causes our model to be particularly susceptible to overfitting. 
+A multiple linear regression model was selected because a given year does not provide many data points. For instance, a given year would only have roughly 32 starting quarterbacks to train a model. This causes our model to be particularly susceptible to overfitting.  In the most recent iteration we used multiple years of data to make the model more robust. So for the 2021 prediction model 2 years of data was used to train the model, and for the 2022 prediction model 3 years of data is used. 
+
 As a result, we opted to try to use a more crude machine learning model (multiple linear regression) and limit the number of features. The downside of using this model is that the features do not have much interaction in a multiple linear regression model.
 Each feature would have a weight that would map to a final projected fantasy output, but a feature touchdown efficiency would not be able to provide a different weight depending on how many touchdowns a player scored in a particular year.
 In addition, many selected features can be intuitively determined not to be linear. The perfect example of this is age. As a player starts off early in their career, they are likely to have an adjustment period to the NFL.
 This typically results in a slow start for rookies. The next couple of years good players tend to improve dramatically until they hit the prime of their career and then the decline varies per position. This is likely better modeled by a quadratic formula rather than a linear one.  
-
