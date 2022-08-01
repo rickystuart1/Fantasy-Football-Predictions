@@ -31,40 +31,28 @@ Interactive elements will include a webpage with multiple pages, mobile responsi
 ### Overview
 Majority of this project's data resides on the [Fantasy Data website](https://fantasydata.com/), and is available through various downloadable tables with a subscription. The team also utilized web scraping and an existing GitHub table to gather supporting information.  
 
-The intitial analysis for this project incorporates the past 4 years of the annual statistics for the main four fantasy football positions: quarterback (QB), running back (RB), wide receiver (WR), and tight end (TE). Supporting information includes the complete set of NFL teams and their basic information as well as the players' background information. All data sources were chosen due to the accuracy, and completeness of the data for previous years, and the effort of retreival.  
+The intitial analysis for this project incorporates the past 4 years of the annual statistics for the main four fantasy football positions: quarterback (QB), running back (RB), wide receiver (WR), and tight end (TE). Supporting information includes the complete set of NFL teams and their basic information as well as the players' background information including depth information. All data sources were chosen due to the accuracy, completeness of the data for previous years, and the effort of retreival. The final database contains 9 tables that are primarily connected by position and Player ID.  Most of the transforming focused on duplicate information and connecting the data sources.  
+
+![ERD July31](./database/database_erd_July31.png)
 
 ### Player Data 
 #### Annual Statistics  
-##### *Source: Downloaded from Fantasy Data*
-Four of the database's tables are annual statistics for each position spanning 2018-2021 seasons, and the primary data input to the modeling.  Initially, the advanced metric tables were downloaded per position per year.  The CSV files per year were merged for each position, underwent initial clean up, and were uploaded to the SQLite database. Additional data for the players were available for download, which then were scrubbed and added to the database.  In order to streamline data usage, a full stats table for each position was created that merged the two separate tables together and removed duplicates columns.
-
-```
-# Query db w/ joins to get full stat tables
-positions = ['qb', 'rb', 'te', 'wr']
-df_list = []
-for x in positions:
-    df = f'{x}_df'
-    table = f'{x.upper()}_Stats'
-    table2 = f'{x.upper()}_Extra_Stats'
-    df = pd.DataFrame(pd.read_sql_query(f'select * from {table} as a inner join {table2} as b on a.PlayerID = b.PlayerPlayerId and a.Year=b.Year', con))
-    df_list.append(df)
-```
+The primary input for our modeling consist of four tables from the database that contain annual statistics for each position spanning 2018-2021 seasons. 
+Each position had two downloadable CSV files per year that were merged and underwent [initial clean up](./database/database_merging_cleanup_final). *Source: Downloaded from Fantasy Data*
 
 #### Weekly Statistics
-##### *Source: Downloaded from Fantasy Data*
-The database includes 4 tables that contain the weekly stats for all positions per year. These tables comprise of downloaded data as well. 
+The database includes 4 tables that contain the weekly stats for all positions per year. These tables comprise of downloaded data as well, and tie to the annual statistics by Player ID.  The weekly stats were introduced for a deeper learning for future projects. For organizational purposes, the weekly stats were combined and given a Year column during [preprocessing](./database/importData_weeklystats.ipynb).  *Source: Downloaded from Fantasy Data*
 
 #### Player Bios
-##### *Source: Webscraped from Fantasy Data*
-While the machine learning portion of the project solely utilizes the annual statistics, the player biographies are used to further evaluate trends in the data.  
+While the machine learning portion of the project solely utilizes the annual statistics, the player biographies are used to further evaluate trends in the data. We utilized webscraping in order to obtain this information, and did [minimal clean up](./database/importData_playerbios.ipynb). *Source: Webscraped from Fantasy Data*
+
+#### Depth Chart
+Predicting future rank depends on the potential play time for the upcoming season, which should be incorporated in the machine learning.  In order to compensate for this variable, the depth chart information from 2018-2022 was scraped.  Since the data came from a different source, mapping was conducted to tie the player name to the Fantasy Data Player ID.  *Source: [Our Lads' Depth Chart](https://www.ourlads.com/nfldepthcharts/)*
 
 ### Teams
 #### Team Summary
-##### *Source: [github/cnizzardini/nfl_teams.csv](https://gist.github.com/cnizzardini/13d0a072adb35a0d5817)*
-Since the weekly and annual player data relied on team abbreviations, this table is used to connect abbreviations to the team's full name, conference,  and division.
+The weekly and annual player data relied on team abbreviations, so this table is used to connect abbreviations to the team's full name, conference, and division. *Source: [github/cnizzardini/nfl_teams.csv](https://gist.github.com/cnizzardini/13d0a072adb35a0d5817)*
 
-#### Depth Chart
-##### *Source: [Our Lads' Depth Chart](https://www.ourlads.com/nfldepthcharts/)*
 
 
 ## Machine Learning Model
