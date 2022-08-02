@@ -209,7 +209,7 @@
     align-items: center;
     justify-self: center;
     margin: 0 auto;
-    height: 75vh;
+    height: 65vh;
     /* edit height based on how many words you add on screen */
     background-color: #919fa0;
     z-index: 1;
@@ -230,7 +230,7 @@
 }
 
 .main__content h2 {
-    font-size: 4rem;
+    font-size: 2.5rem;
     background-color: #25343b; 
     /* background-image: linear-gradient(to top, #ffffff 0%,  #3f5865 70%); */
     background-size: 100%;
@@ -242,7 +242,7 @@
 
 .main__content p {
     margin-top: 1rem;
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: 700;
     color: #fff
 }
@@ -307,7 +307,7 @@
         justify-self: center;
         width: 100%;
         margin: 0 auto;
-        height: 90vh;
+        height: 55vh;
     }
 
     .main__content {
@@ -357,14 +357,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 75vh;
+    height: 65vh;
+   
 }
 .services h1 {
     background-color: #25343b;
-    /* background-image: linear-gradient(to right, #3f5865 0%, #fff 100%); */
     background-size: 100%;
     margin-bottom: 5rem;
     font-size: 2.5rem;
+    width: 65%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -379,8 +380,8 @@
 
 .services__card {
     margin: 1rem;
-    height: 525px;
-    width: 300px;
+    height: auto;
+    width: 400px;
     border-radius: 4px;
     background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17,0.6) 100%), url('../images/pic2.jpg');
     background-size: cover;
@@ -391,14 +392,14 @@
 .services__card:nth-child(2) {
     margin: 1rem;
     height: 525px;
-    width: 300px;
+    width: 400px;
     border-radius: 4px;
     background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(17,17,17,0.6) 100%), url('../images/pic3.jpg');
     background-size: cover;
     position: relative;
     color: #fff;
 }
-.services__card:nth-child(3) {
+/* .services__card:nth-child(3) {
     margin: 1rem;
     height: 525px;
     width: 300px;
@@ -407,7 +408,7 @@
     background-size: cover;
     position: relative;
     color: #fff;
-}
+} */
 
 .services h2 {
     position: absolute;
@@ -446,6 +447,10 @@
         height: auto;
     }
 
+    .services__container {
+        height: auto;
+    }
+
     .services h1 {
         font-size: 2rem;
         margin-top: 12rem;
@@ -454,6 +459,10 @@
 
 @media screen and (max-width: 480px) {
     .services {
+        height: auto;
+    }
+
+    .services__container {
         height: auto;
     }
 
@@ -626,7 +635,7 @@
     align-items: center;
     justify-self: center;
     margin: 0 auto;
-    height: 75vh;
+    height: 45vh;
     /* edit height based on how many words you add on screen */
     background-color: #919fa0;
     z-index: 1;
@@ -726,7 +735,7 @@
     align-items: center;
     justify-self: center;
     margin: 0 auto;
-    height: auto;
+    height: 40vh;
     /* edit height based on how many words you add on screen */
     background-color: #919fa0;
     z-index: 1;
@@ -775,7 +784,7 @@
         justify-self: center;
         width: 100%;
         margin: 0 auto;
-        height: 90vh;
+        height: 75vh;
     }
 
     .players__content {
@@ -823,7 +832,7 @@
 .row {
     color: #000000;
     background-color: #919fa0;
-    padding: 75px;
+    padding: auto;
     text-align: center;
 
 }
@@ -847,3 +856,29 @@
     top: 0;
     width: 100%;
     }
+
+
+#filtertext {
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.filter-btn {
+    font-size: 1rem;
+    background-color: rgb(80, 73, 73);
+    padding: 7px 1px;
+    border: solid;
+    border-color: #000000;
+    border-radius: 3px;
+    color: #fff;
+    margin-top: .25rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.35s;
+    outline: none;
+}
+
+.filter-btn:active {
+    background-color: #25343b;
+    border-color: #fff;
+}
