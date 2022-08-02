@@ -1,116 +1,7 @@
-Teams
-ID
-Name
-Abbreviation
-Conference
-Division
-
-QB_Stats
-index
-Rank
-PlayerID
-PlayerShortName
-PlayerAgeExact
-PassAttemptsPerGame
-PassingYards
-CompletionPercentage
-PassingTouchdowns
-Interceptions
-MoneyThrows
-TouchdownRate
-ProtectionRate
-PressuredCompletionPercentage
-AirYards
-AirYardsPerGame
-AirYardsPerAttempt
-DeepBallAttempts
-DeepBallCompletionPercentage
-Year
-Position
-
-WR_Stats
-index
-Rank
-PlayerID
-PlayerShortName
-Targets
-Reception
-ReceivingYards
-ReceivingTDs
-HogRate
-SnapShare
-AverageTargetDistance
-AirYards
-AirYardsPerGame
-AirYardsPerReception
-Targets.1
-RedZone Targets
-EndZone Targets
-TargetAccuracy
-TargetShare
-FantacyPointsPerTarget
-Year
-Position
-
-TE_Stats
-index
-Rank
-PlayerID
-PlayerShortName
-Targets
-Reception
-ReceivingYards
-ReceivingTDs
-HogRate
-SnapShare
-AverageTargetDistance
-AirYards
-AirYardsPerGame
-AirYardsPerReception
-Targets.1
-RedZone Targets
-EndZone Targets
-TargetAccuracy
-TargetShare
-FantacyPointsPerTarget
-Year
-Position
-
-RB_Stats
-index
-Rank
-PlayerID
-PlayerShortName
-PlayerAgeExact
-Carries
-RushingYArds
-YardsPerCarry
-RushingTouchdowns
-Targets
-Receptions
-ReceivingYards
-ReceivingTDs
-SnapShare
-OpportunityShare
-ShotgunCarryRate
-ShotgunYardsPerCarry
-UnderCenterCarryRate
-UnderCenterYardsPerCarry
-AverageDefendersInTheBox
-StackedFrontCarryRate
-BaseFrontCarryRate
-LightFrontCarryRate
-Year
-Position
-
-# Modify this code to update the DB schema diagram.
-# To reset the sample schema, replace everything with
-# two dots ('..' - without quotes).
-
 RB_Full_Stats
 -
-Index int PK
-PlayerID int
+Index int 
+PlayerID int PK 
 Name varchar
 PlayerShortName varchar
 PlayerAgeExact float
@@ -118,7 +9,7 @@ Rank int
 Team varchar
 Position varchar
 Played int
-Year int
+Year int PK 
 RushingAttempts int
 RushingYards int
 RushingYardsPerAttempt float
@@ -136,8 +27,8 @@ FantasyPoints int
 
 QB_Full_Stats
 -
-Index int PK
-PlayerID int
+Index int 
+PlayerID int 
 Name varchar
 PlayerShortName varchar
 PlayerAgeExact float
@@ -145,7 +36,7 @@ Rank int
 Team varchar
 Position varchar
 Played int
-Year int
+Year int PK
 PassingCompletions int
 PassingAttempts int
 PassingCompletionPercentage float
@@ -174,15 +65,15 @@ FantasyPoints int
 
 TE_Full_Stats
 -
-Index int PK
-PlayerID int
+Index int 
+PlayerID int PK
 Name varchar
 PlayerShortName varchar
 Rank int
 Team varchar
 Position varchar
 Played int
-Year int
+Year int PK
 ReceivingTargets int
 Receptions int
 ReceptionPercentage float
@@ -219,7 +110,7 @@ Rank int
 Team varchar
 Position varchar
 Played int
-Year int
+Year int PK
 ReceivingTargets int
 Receptions int
 ReceptionPercentage float
@@ -246,17 +137,39 @@ FantasyPointsPerTarget float
 FantasyPointsPerGame float
 FantasyPoints int
 
+Weekly_Stats
+-
+Rank int
+Player_ID int PK
+Name varchar
+Team varchar
+Position varchar
+WeeklyRank int
+Week int
+Opponent varchar
+PassingYards int
+PassingTouchdowns int
+PassingInterceptions int
+RushingYards int
+RushingTouchdowns int
+Receptions int
+ReceivingYards int
+ReceivingTouchdowns int
+FumblesLost int
+FantasyPointsPerGame float
+FantasyPoints int
+
 Teams
 -
 ID
-Name varchar PK
-Abbreviation varchar
+Name varchar 
+Abbreviation varchar PK
 Conference varchar
 Division varchar
 
 PlayerBios
 -
-Player_ID PK
+Player_ID int PK 
 Name varchar 
 rel_link varchar
 Position varchar
@@ -265,7 +178,6 @@ weight_(lbs) float
 dob_age varchar
 experience varchar
 college varchar
-weight_lbs varchar
 dob varchar
 exp(y) varchar
 draft_year int
@@ -273,87 +185,22 @@ draft_round int
 draft_pick int
 draft_team varchar
 
-weekly_2018
--
-Rank int
-Name varchar PK 
-Team varchar
-Position varchar
-WeeklyRank int
-Week int
-Opponent varchar
-PassingYards int
-PassingTouchdowns int
-PassingInterceptions int
-RushingYards int
-RushingTouchdowns int
-Receptions int
-ReceivingYards int
-ReceivingTouchdowns int
-FumblesLost int
-FantasyPointsPerGame float
-FantasyPoints int
 
-weekly_2019
+DepthCharts
 -
-Rank int
-Name varchar PK 
+index int
 Team varchar
+Year int PK
 Position varchar
-WeeklyRank int
-Week int
-Opponent varchar
-PassingYards int
-PassingTouchdowns int
-PassingInterceptions int
-RushingYards int
-RushingTouchdowns int
-Receptions int
-ReceivingYards int
-ReceivingTouchdowns int
-FumblesLost int
-FantasyPointsPerGame float
-FantasyPoints int
- 
-weekly_2020
--
-Rank int
-PlayerID int
-Name varchar PK 
-Team varchar
-Position varchar
-WeeklyRank int
-Week int
-Opponent varchar
-PassingYards int
-PassingTouchdowns int
-PassingInterceptions int
-RushingYards int
-RushingTouchdowns int
-Receptions int
-ReceivingYards int
-ReceivingTouchdowns int
-FumblesLost int
-FantasyPointsPerGame float
-FantasyPoints int
+Depth int
+Name varchar
+PlayerID int PK
 
-weekly_2021
--
-Rank int
-Name varchar PK 
-Team varchar
+ModelOutput
+- 
+Overall_Rank int
+Position_Rank int
 Position varchar
-WeeklyRank int
-Week int
-Opponent varchar
-PassingYards int
-PassingTouchdowns int
-PassingInterceptions int
-RushingYards int
-RushingTouchdowns int
-Receptions int
-ReceivingYards int
-ReceivingTouchdowns int
-FumblesLost int
-FantasyPointsPerGame float
-FantasyPoints int
+Player_ID int PK
+Name varchar
+YR_Rank int
