@@ -8,8 +8,8 @@ menu.addEventListener('click', function() {
 });
 
 filterbtn.forEach(btn => btn.addEventListener('click', function(event) {
-    event.preventDefault()
-    event.target.classList.toggle('is-active')
-    filterTable({ value: event.target.id, key: 'position'})
-}))
+    event.preventDefault();
+    event.target.classList.toggle('is-active');
+    filterTable({ value: event.target.id, key: 'position'});
+}));
 

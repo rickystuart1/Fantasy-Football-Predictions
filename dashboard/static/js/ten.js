@@ -19,11 +19,10 @@ function buildTable(data) {
         Object.values(dataRow).forEach((val) => {
             const cell = document.createElement('td');
             cell.innerText = val;
-            row.appendChild(cell)
+            row.appendChild(cell);
         });
     });
-}
-
+};
 
 function filterTable(filter) {
     tbody.innerHTML = "";
@@ -37,11 +36,11 @@ function filterTable(filter) {
             Object.values(entry).forEach((val) => {
                 const cell = document.createElement('td');
                 cell.innerText = val;
-                row.appendChild(cell)
+                row.appendChild(cell);
             });
-        }
-    })
-}
+        };
+    });
+};
 
 // Build the table when the page loads
 buildTable(tableData);
