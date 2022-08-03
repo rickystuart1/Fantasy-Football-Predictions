@@ -361,13 +361,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 90vh;
+    height: auto;
    
 }
+.services__text {
+    justify-content: center;
+    margin-top: 5rem;
+    margin-left: 25%;
+
+}
 .services__text h1 {
-    display: flex;
-    align-items: center;
-    justify-items: center;
+    text-align: center;
     background-color: #25343b;
     background-size: 100%;
     margin-bottom: 5rem;
@@ -383,6 +387,10 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    background-color: #919fa0;
+    display: flex;
+    align-items: center;
+    height: auto;
 }
 
 .services__card {
@@ -418,6 +426,12 @@
 } */
 
 .services h2 {
+    position: absolute;
+    top: 350px;
+    left: 30px;
+}
+
+.services__card h2 {
     position: absolute;
     top: 350px;
     left: 30px;
@@ -856,10 +870,14 @@
     text-overflow: ellipsis;
 }
 
+#table_filter {
+    width:auto;
+
+}
 .my-custom-scrollbar {
     position: relative;
     height: 700px;
-    overflow: auto;
+    overflow: hidden;
 }
 
 .table-wrapper-scroll-y {
