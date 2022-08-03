@@ -470,6 +470,7 @@
 
     .services__text {
         height: auto;
+        margin-top: 1rem;
     }
 
     .services__container {
@@ -489,6 +490,8 @@
 
     .services__text {
         height: auto;
+        margin-top: 1rem;
+
     }
 
     .services__container {
