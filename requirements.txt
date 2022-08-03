@@ -1,4 +1,4 @@
-anaconda-client==1.10.0
+
 bs4==0.0.1
 conda==4.13.0
 cssselect==1.1.0
