@@ -1,4 +1,4 @@
-const tableData = data1;
+const tableData = data;
 
 // get table references
 var tbody = document.querySelector('#topten');
