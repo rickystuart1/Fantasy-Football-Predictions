@@ -466,7 +466,7 @@
 
 @media screen and (max-width: 960px) {
     .services {
-        height: auto;
+        height: 50vh;
     }
     .services__text {
         height: auto;
@@ -481,7 +481,7 @@
 
     .services h1 {
         font-size: 2rem;
-        margin-top: 12rem;
+        margin-top: .35rem;
     }
 }
 
@@ -506,7 +506,9 @@
     }
 }
 
-
+@media screen and (max-width: 480px) { 
+    
+}
 /* Footer CSS */
 .footer__container {
     background-color: #2f3133;
