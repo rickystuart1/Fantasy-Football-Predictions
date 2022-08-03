@@ -19,6 +19,7 @@ function buildTable(data) {
         Object.values(dataRow).forEach((val) => {
             const cell = document.createElement('td');
             cell.innerText = val;
+            cell.className = "display-cutoff"
             row.appendChild(cell);
         });
     });
@@ -36,6 +37,7 @@ function filterTable(filter) {
             Object.values(entry).forEach((val) => {
                 const cell = document.createElement('td');
                 cell.innerText = val;
+                cell.className = "display-cutoff"
                 row.appendChild(cell);
             });
         };

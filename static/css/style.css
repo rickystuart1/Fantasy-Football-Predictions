@@ -102,6 +102,10 @@
 }
 
 @media screen and (max-width: 960px) {
+    .navbar {
+        font-size: .75rem;
+    }
+
     .navbar__container {
         display: flex;
         justify-content: space-between;
@@ -360,7 +364,10 @@
     height: 90vh;
    
 }
-.services h1 {
+.services__text h1 {
+    display: flex;
+    align-items: center;
+    justify-items: center;
     background-color: #25343b;
     background-size: 100%;
     margin-bottom: 5rem;
@@ -447,6 +454,10 @@
         height: auto;
     }
 
+    .services__text {
+        height: auto;
+    }
+
     .services__container {
         height: auto;
     }
@@ -459,6 +470,10 @@
 
 @media screen and (max-width: 480px) {
     .services {
+        height: auto;
+    }
+
+    .services__text {
         height: auto;
     }
 
@@ -835,6 +850,10 @@
     padding: auto;
     text-align: center;
 
+}
+.display-cutoff {
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .my-custom-scrollbar {
