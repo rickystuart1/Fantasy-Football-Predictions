@@ -38,7 +38,7 @@ The intitial analysis for this project incorporates the past 4 years of the annu
 ### Player Data 
 #### Annual Statistics  
 The primary input for our modeling consist of four tables from the database that contain annual statistics for each position spanning 2018-2021 seasons. 
-Each position had two downloadable CSV files per year that were merged and underwent [initial clean up](./database/database_merging_cleanup_final). *Source: Downloaded from Fantasy Data*
+Each position had two downloadable CSV files per year that were merged and underwent [initial clean up](./database/database_merging_cleanup_final.ipynb). *Source: Downloaded from Fantasy Data*
 
 #### Weekly Statistics
 The database includes 4 tables that contain the weekly stats for all positions per year. These tables comprise of downloaded data as well, and tie to the annual statistics by Player ID.  The weekly stats were introduced for a deeper learning for future projects. For organizational purposes, the weekly stats were combined and given a Year column during [preprocessing](./database/importData_weeklystats.ipynb).  *Source: Downloaded from Fantasy Data*
