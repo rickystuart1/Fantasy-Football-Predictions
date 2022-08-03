@@ -1,1 +1,1 @@
-password = 'UTBoot#2022'
+password = 'nicetry'
